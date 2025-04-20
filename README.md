@@ -23,13 +23,12 @@ Praticar o uso de Python e Power BI em um contexto de dados reais (simulados), d
 
 2. 📁 **Exemplo de código**
 ```python
-import pandas as pd
-import matplotlib.pyplot as plt
-
-df = pd.read_csv('vendas_ficticias.csv')
-df['Data_venda'] = pd.to_datetime(df['Data_venda'])
-df['AnoMes'] = df['Data_venda'].dt.to_period('M')
-vendas_mensais = df.groupby('AnoMes')['Total_Venda'].sum().reset_index()
+- import pandas as pd
+- import matplotlib.pyplot as plt
+- df = pd.read_csv('')
+- df[''] = pd.to_datetime(df[''])
+- df[''] = df[''].dt.to_period('M')
+- vendas_mensais = df.groupby('')[''].sum().reset_index()
 
 <p align="center">
   <img src="https://i.imgur.com/VCtsecR.jpeg" alt="Comandos de navegação no terminal" width="700"/>
