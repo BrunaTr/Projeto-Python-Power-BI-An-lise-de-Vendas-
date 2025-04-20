@@ -21,18 +21,26 @@ Praticar o uso de Python e Power BI em um contexto de dados reais (simulados), d
 - `matplotlib`: para criação de gráficos
 - Conversão de datas, criação de colunas “Ano-Mês” e agrupamento de vendas por período
 
-2. 📁 **Exemplo de código**
-```python
-- import pandas as pd
-- import matplotlib.pyplot as plt
-- df = pd.read_csv('')
-- df[''] = pd.to_datetime(df[''])
-- df[''] = df[''].dt.to_period('M')
-- vendas_mensais = df.groupby('')[''].sum().reset_index()
-
 <p align="center">
   <img src="https://i.imgur.com/VCtsecR.jpeg" alt="Comandos de navegação no terminal" width="700"/>
 </p>
+
+
+<p align="center">
+  <img src="https://i.imgur.com/prYWGGV.jpeg" alt="Comandos de navegação no terminal" width="700"/>
+</p>
+
+---
+
+2. 📁 **Exemplo de código**
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('vendas_ficticias.csv')
+df['Data_venda'] = pd.to_datetime(df['Data_venda'])
+df['AnoMes'] = df['Data_venda'].dt.to_period('M')
+vendas_mensais = df.groupby('AnoMes')['Total_Venda'].sum().reset_index()
 
 plt.figure(figsize=(10,5))
 plt.plot(vendas_mensais['AnoMes'].astype(str), vendas_mensais['Total_Venda'], marker='o', color='purple')
@@ -43,27 +51,30 @@ plt.xticks(rotation=45)
 plt.grid(True)
 plt.tight_layout()
 plt.show()
+
+
+---
+
 📈 Dashboard com Power BI
 
-<p align="center">
-  <img src="https://i.imgur.com/prYWGGV.jpeg" alt="Comandos de navegação no terminal" width="700"/>
-</p>
+- Importação do CSV com os dados tratados
 
-Importação do CSV com os dados tratados
+- Criação de gráficos de linha para análise mensal
 
-Criação de gráficos de linha para análise mensal
+- Filtros por período, categoria e produto
 
-Filtros por período, categoria e produto
+- Destaques para meses com maiores/menores vendas
 
-Destaques para meses com maiores/menores vendas
+---
 
 🗂️ Arquivos incluídos
 
-vendas_ficticias.csv: base de dados fictícia criada para simular vendas
+- vendas_ficticias.csv: base de dados fictícia criada para simular vendas
 
-analise_vendas.py: script Python com toda a lógica de análise
+- analise_vendas.py: script Python com toda a lógica de análise
 
-dashboard.pbix: arquivo Power BI com o painel final
+- dashboard.pbix: arquivo Power BI com o painel final
+
 
 🚀 Sobre mim
 Sou entusiasta de tecnologia, estudando Python, Power BI e Análise de Dados com o objetivo de atuar profissionalmente na área de dados. Este projeto faz parte do meu portfólio e jornada de transição de carreira.
